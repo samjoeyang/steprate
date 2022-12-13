@@ -79,3 +79,26 @@ obj.type='full'
 
 ```
 
+# pypi打包方法
+
+1.编写pyproject.toml文件
+
+```python
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "steprate"
+description = "计算阶梯扣率或阶梯分成的一组方法"
+readme = "README.md"
+keywords= ["阶梯扣率", "阶梯分成", "扣除", "阶梯", "扣率", "分成","step","rate",]
+license = {text = ""}
+dynamic = ["version"]
+```
+
+2. 运行`python -m build`
+
+3. 打包完成后,运行`twine upload dist/*`
+
+4. 输入用户名密码，需要提前注册pypi.org账户
